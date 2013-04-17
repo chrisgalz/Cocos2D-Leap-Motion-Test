@@ -127,6 +127,8 @@
 		CE8C189E171E34FD008BD24F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C189D171E34FD008BD24F /* main.m */; };
 		CE8C18A1171E34FD008BD24F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C18A0171E34FD008BD24F /* AppDelegate.m */; };
 		CE8C18A4171E34FE008BD24F /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C18A3171E34FE008BD24F /* HelloWorldLayer.m */; };
+		CE8C18AB171E351A008BD24F /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8C18AA171E351A008BD24F /* libLeap.dylib */; };
+		CE8C18AF171E3527008BD24F /* LeapObjectiveC.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE8C18AE171E3527008BD24F /* LeapObjectiveC.mm */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -395,6 +397,11 @@
 		CE8C18A0171E34FD008BD24F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE8C18A2171E34FE008BD24F /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		CE8C18A3171E34FE008BD24F /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		CE8C18AA171E351A008BD24F /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = ../../../../../Developer/LeapSDK/lib/libLeap.dylib; sourceTree = "<group>"; };
+		CE8C18AC171E3527008BD24F /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
+		CE8C18AD171E3527008BD24F /* LeapObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapObjectiveC.h; sourceTree = "<group>"; };
+		CE8C18AE171E3527008BD24F /* LeapObjectiveC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LeapObjectiveC.mm; sourceTree = "<group>"; };
+		CE8C18B0171E3576008BD24F /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8C18AB171E351A008BD24F /* libLeap.dylib in Frameworks */,
 				CE8C1713171E34F8008BD24F /* QuartzCore.framework in Frameworks */,
 				CE8C1715171E34F8008BD24F /* OpenGL.framework in Frameworks */,
 				CE8C1717171E34F8008BD24F /* OpenAL.framework in Frameworks */,
@@ -417,6 +425,7 @@
 		CE8C1706171E34F8008BD24F = {
 			isa = PBXGroup;
 			children = (
+				CE8C18AA171E351A008BD24F /* libLeap.dylib */,
 				CE8C171E171E34F8008BD24F /* Cocos2D Leap Motion Test */,
 				CE8C1711171E34F8008BD24F /* Frameworks */,
 				CE8C1710171E34F8008BD24F /* Products */,
@@ -447,6 +456,10 @@
 		CE8C171E171E34F8008BD24F /* Cocos2D Leap Motion Test */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C18B0171E3576008BD24F /* Leap.h */,
+				CE8C18AC171E3527008BD24F /* LeapMath.h */,
+				CE8C18AD171E3527008BD24F /* LeapObjectiveC.h */,
+				CE8C18AE171E3527008BD24F /* LeapObjectiveC.mm */,
 				CE8C189F171E34FD008BD24F /* AppDelegate.h */,
 				CE8C18A0171E34FD008BD24F /* AppDelegate.m */,
 				CE8C18A2171E34FE008BD24F /* HelloWorldLayer.h */,
@@ -1013,6 +1026,7 @@
 				CE8C189E171E34FD008BD24F /* main.m in Sources */,
 				CE8C18A1171E34FD008BD24F /* AppDelegate.m in Sources */,
 				CE8C18A4171E34FE008BD24F /* HelloWorldLayer.m in Sources */,
+				CE8C18AF171E3527008BD24F /* LeapObjectiveC.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1092,6 +1106,10 @@
 					"\"Cocos2D Leap Motion Test/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "Cocos2D Leap Motion Test/Resources/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/LeapSDK/lib,
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1113,6 +1131,10 @@
 					"\"Cocos2D Leap Motion Test/libs/kazmath/include\"",
 				);
 				INFOPLIST_FILE = "Cocos2D Leap Motion Test/Resources/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/LeapSDK/lib,
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
